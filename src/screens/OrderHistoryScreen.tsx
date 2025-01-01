@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { useStore } from '../store/store'
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../theme/theme';
@@ -8,47 +8,72 @@ import EmptyListAnimation from '../components/EmptyListAnimation';
 import PopUpAnimation from '../components/PopUpAnimation';
 import OrderHistoryCard from '../components/OrderHistoryCard';
 
-const OrderHistoryScreen = () => {
+const OrderHistoryScreen = ({ navigation }: any) => {
   const OrderHistoryList = useStore((state: any) => state.OrderHistoryList);
   const tabBarHeight = useBottomTabBarHeight();
   const [showAnimation, setShowAnimation] = useState(false);
 
+
+  const navigationHandler = ({ index, id, type }: any) => {
+    navigation.push("Details", { index: index, id: id, type: type })
+  };
+
+  const buttonPressHandler=()=>{
+    setShowAnimation(true);
+    
+    setTimeout(() => {
+      setShowAnimation(false);
+    }, 2000);
+  }
+
   return (
     <View style={styles.ScreenContainer}>
-      <StatusBar backgroundColor={COLORS.primaryBlackHex}/>
+      <StatusBar backgroundColor={COLORS.primaryBlackHex} />
       {showAnimation ? (
         <PopUpAnimation
           style={styles.LottieAnimation}
-          source={require('../lottie/successful.json')}
+          source={require('../lottie/download.json')}
         />
       ) : (
         <></>
       )}
       <ScrollView
-      showsVerticalScrollIndicator={false}
-      contentContainerStyle={styles.ScrollViewFlex}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.ScrollViewFlex}
       >
-        <View style={[styles.ScrollViewInnerView,{marginBottom:tabBarHeight}]}>
+        <View style={[styles.ScrollViewInnerView, { marginBottom: tabBarHeight }]}>
           <View style={styles.ItemContainer}>
-            <HeaderBar title='Order History'/>
+            <HeaderBar title='Order History' />
 
             {OrderHistoryList.length == 0 ?
               <EmptyListAnimation title={'No Order History'} />
               :
               (<View style={styles.ListItemContainer}>
                 {
-                  OrderHistoryList.map((data:any,index:any)=>(
+                  OrderHistoryList.map((data: any, index: any) => (
                     <OrderHistoryCard
-                    key={index.toString()}
-                    navigationHandler={()=>{}}
-                    OrderDate={data.OrderDate}
-                    CartListPrice={data.CartListPrice}  
-                    CartList={data.CartList}                  
+                      key={index.toString()}
+                      navigationHandler={navigationHandler}
+                      OrderDate={data.OrderDate}
+                      CartListPrice={data.CartListPrice}
+                      CartList={data.CartList}
                     />
                   ))
                 }
               </View>)}
           </View>
+          {
+            OrderHistoryList.length>0?
+            (<TouchableOpacity style={styles.DownloadButton}
+            onPress={()=>{
+              buttonPressHandler()
+            }}
+            >
+              <Text style={styles.ButtonText}>
+                Download
+              </Text>
+            </TouchableOpacity>):<></>
+          }
 
         </View>
       </ScrollView>
