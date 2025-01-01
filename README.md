@@ -5,7 +5,7 @@ CoffeeShop is a React Native application that brings the ultimate coffee shoppin
 
 ---
 
-## Features ✨
+### Features ✨
 
 - **Home Screen**: Browse and explore available coffee and bean options.
 - **Cart**: Add your favorite coffee and beans and proceed to checkout.
@@ -15,7 +15,7 @@ CoffeeShop is a React Native application that brings the ultimate coffee shoppin
 
 ---
 
-## Tech Stack 🚀
+### Tech Stack 🚀
 
 - **React Native**: Framework for building mobile apps.
 - **Libraries Used**:
@@ -33,7 +33,7 @@ CoffeeShop is a React Native application that brings the ultimate coffee shoppin
 
 ---
 
-## Screens 📱
+### Screens 📱
 
 1. **Home Screen**: Displays a list of coffee and beans available for purchase.
    ![Home Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/Home_Screen.png)
@@ -55,7 +55,7 @@ CoffeeShop is a React Native application that brings the ultimate coffee shoppin
 
 ---
 
-## Installation and Setup 🛠️
+### Installation and Setup 🛠️
 
 Follow these steps to set up and run the CoffeeShop app:
 
