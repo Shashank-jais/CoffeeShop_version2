@@ -35,21 +35,26 @@ CoffeeShop is a React Native application that brings the ultimate coffee shoppin
 ### Screens 📱
 
 1. **Home Screen**: Displays a list of coffee and beans available for purchase.
-   ![Home Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/Home_Screen.png)
+   
+![Home Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/Home_Screen.png)
 
-2. **Cart Screen**: Shows items added to the cart for checkout.
-   ![Cart Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/Cart_Screen.png)
+3. **Cart Screen**: Shows items added to the cart for checkout.
+   
+![Cart Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/Cart_Screen.png)
 
-3. **Payment Screen**: Secure and seamless payment options.
-   ![Payment Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/Payment_Screen.png)
+5. **Payment Screen**: Secure and seamless payment options.
+   
+![Payment Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/Payment_Screen.png)
 
-4. **Order History Screen**: View your previous orders in detail.
-   ![Order History Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/History_Screen.png)
+7. **Order History Screen**: View your previous orders in detail.
 
-5. **Details Screen**: In-depth information about the selected coffee or bean.
-   ![Details Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/Coffee_Details_Screen.png)
+![Order History Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/History_Screen.png)
 
-   ![Details Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/Beans_Details_Screen.png)
+9. **Details Screen**: In-depth information about the selected coffee or bean.
+    
+![Details Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/Coffee_Details_Screen.png)
+
+![Details Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/Beans_Details_Screen.png)
 
 
 ---
