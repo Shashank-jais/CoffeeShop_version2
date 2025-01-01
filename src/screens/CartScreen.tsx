@@ -19,7 +19,8 @@ const CartScreen = ({ navigation, route }: any) => {
 
 
   const buttonPressHandler = () => {
-    navigation.push('Payment');
+    // console.log('ButtonPressHandler')
+    navigation.push('Payment', { amount: CartPrice });
   };
 
   const incrementCartItemQuantityHandler = (id: string, size: string) => {
@@ -44,14 +45,16 @@ const CartScreen = ({ navigation, route }: any) => {
         <View
           style={[styles.ScrollViewInnerView, { marginBottom: tabBarHeight }]}>
           <View style={styles.ItemContainer}>
-            <HeaderBar title='Cart ' />
+            <HeaderBar title='Cart' />
             {CartList.length == 0 ?
               <EmptyListAnimation title='Cart is Empty' />
               :
               (<View style={styles.ListItemContainer}>
                 {
                   CartList.map((data: any) => (
-                    <TouchableOpacity onPress={() => {console.log(CartList) }} key={data.id}>
+                    <TouchableOpacity onPress={() => {
+                      navigation.push("Details", { index: data.index, id: data.id, type: data.type })
+                    }} key={data.id}>
                       <CardItem
                         id={data.id}
                         name={data.name}
@@ -60,15 +63,15 @@ const CartScreen = ({ navigation, route }: any) => {
                         roasted={data.roasted}
                         prices={data.prices}
                         type={data.type}
-                        incrementCartItemQuantityHandler={()=>{}}
-                        decrementCartItemQuantityHandler={()=>{}}
+                        incrementCartItemQuantityHandler={incrementCartItemQuantityHandler}
+                        decrementCartItemQuantityHandler={decrementCartItemQuantityHandler}
                       />
                     </TouchableOpacity>
                   ))}
               </View>
               )}
           </View>
-          {CartList.length != 0 ? <PaymentFooter buttonTitle='Pay' price={{ price: CartPrice, currency: '$' }} buttonPressHandler={() => { buttonPressHandler }} /> : <></>}
+          {CartList.length != 0 ? <PaymentFooter buttonTitle='Pay' price={{ price: CartPrice, currency: '$' }} buttonPressHandler={() => { buttonPressHandler() }} /> : <></>}
         </View>
 
       </ScrollView>

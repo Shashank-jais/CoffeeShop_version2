@@ -39,10 +39,10 @@ const CardItem: React.FC<CardItemProps> = ({
     roasted,
     prices,
     type,
-    incementCartItemQuantityHandler,
+    incrementCartItemQuantityHandler,
     decrementCartItemQuantityHandler,
 }: any) => {
-    console.log(roasted);
+    // console.log(roasted);
     return (
         <View>
             {prices.length != 1 ? (
@@ -107,7 +107,7 @@ const CardItem: React.FC<CardItemProps> = ({
                                 <TouchableOpacity
                                     style={styles.CartItemIcon}
                                     onPress={() => {
-                                        incementCartItemQuantityHandler(id, data.size);
+                                        incrementCartItemQuantityHandler(id, data.size);
                                     }}>
                                     <CustomIcon
                                         name="add"
@@ -174,7 +174,7 @@ const CardItem: React.FC<CardItemProps> = ({
                             <TouchableOpacity
                                 style={styles.CartItemIcon}
                                 onPress={() => {
-                                    incementCartItemQuantityHandler(id, prices[0].size);
+                                    incrementCartItemQuantityHandler(id, prices[0].size);
                                 }}>
                                 <CustomIcon
                                     name="add"

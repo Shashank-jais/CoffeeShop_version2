@@ -7,16 +7,17 @@ import PaymentFooter from '../components/PaymentFooter';
 
 const DetailsScreen = ({ navigation, route }: any) => {
   const ItemofIndex = useStore((state: any) => route.params.type == "Coffee" ? state.CoffeeList : state.BeanList)[route.params.index];
-  
+
   const BackHandler = () => {
     navigation.pop();
   }
+
   const addToFavoriteList = useStore((state: any) => state.addToFavoriteList);
   const deleteFromFavoriteList = useStore((state: any) => state.deleteFromFavoriteList);
 
   const addToCart = useStore((state: any) => state.addToCart);
   const calculateCartPrice = useStore((state: any) => state.calculateCartPrice);
-  
+
   const [price, setPrice] = useState(ItemofIndex.prices[0])
   const [fullDesc, setFullDesc] = useState(false);
 
@@ -42,16 +43,16 @@ const DetailsScreen = ({ navigation, route }: any) => {
       imagelink_square,
       special_ingredient,
       type,
-      prices: [{...price, quantity: 1}],
+      prices: [{ ...price, quantity: 1 }],
     });
-    
+
     calculateCartPrice();
-    // navigation.push('Cart');
+    navigation.navigate("Tab",{screen:'Cart'});
     ToastAndroid.showWithGravity(
-          `${name} is Added to Cart`,
-          ToastAndroid.SHORT,
-          ToastAndroid.CENTER,
-        );
+      `${name} is Added to Cart`,
+      ToastAndroid.SHORT,
+      ToastAndroid.CENTER,
+    );
   };
 
 
@@ -121,19 +122,19 @@ const DetailsScreen = ({ navigation, route }: any) => {
             ))}
           </View>
         </View>
-        <PaymentFooter price={price} buttonTitle='Add to Cart' 
-        buttonPressHandler={() => {
-          addToCarthandler({
-            id: ItemofIndex.id,
-            index: ItemofIndex.index,
-            name: ItemofIndex.name,
-            roasted: ItemofIndex.roasted,
-            imagelink_square: ItemofIndex.imagelink_square,
-            special_ingredient: ItemofIndex.special_ingredient,
-            type: ItemofIndex.type,
-            price: price,
-          });
-        }}
+        <PaymentFooter price={price} buttonTitle='Add to Cart'
+          buttonPressHandler={() => {
+            addToCarthandler({
+              id: ItemofIndex.id,
+              index: ItemofIndex.index,
+              name: ItemofIndex.name,
+              roasted: ItemofIndex.roasted,
+              imagelink_square: ItemofIndex.imagelink_square,
+              special_ingredient: ItemofIndex.special_ingredient,
+              type: ItemofIndex.type,
+              price: price,
+            });
+          }}
         />
       </ScrollView>
     </View>
@@ -165,7 +166,7 @@ const styles = StyleSheet.create({
     fontSize: FONTSIZE.size_14,
     color: COLORS.primaryWhiteHex,
     marginBottom: SPACING.space_30,
-    
+
   },
   SizeOuterContainer: {
     flex: 1,
