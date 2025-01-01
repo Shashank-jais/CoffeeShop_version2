@@ -52,7 +52,9 @@ CoffeeShop is a React Native application that brings the ultimate coffee shoppin
 
 9. **Details Screen**: In-depth information about the selected coffee or bean.
     
-![Details Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/Coffee_Details_Screen.png)   ![Details Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/Beans_Details_Screen.png)
+![Details Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/Coffee_Details_Screen.png)  
+
+![Details Screen](https://github.com/Shashank-jais/CoffeeShop_version2/blob/main/src/Image_readme/Beans_Details_Screen.png)
 
 
 ---
