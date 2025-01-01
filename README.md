@@ -1,4 +1,3 @@
-```markdown
 # CoffeeShop App ☕
 
 CoffeeShop is a React Native application that brings the ultimate coffee shopping experience to your fingertips. The app features an intuitive UI, seamless navigation, and advanced functionalities such as a cart, payment options, and order history. Dive into the details of your favorite coffee and beans in an immersive way.
